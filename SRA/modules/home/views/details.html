@@ -1,0 +1,201 @@
+<div class="progress" ng-if="detailsLoading">
+    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+        <span class="sr-only">40% Complete (success)</span>
+    </div>
+</div>
+
+
+<article class="customer-details-wrapper" style="" ng-if="!detailsLoading">
+
+    <section class="content-header">
+        <ol class="breadcrumb">
+            <li><a href="#/dash"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#/home"><i class="fa fa-dashboard"></i> Customer List</a></li>
+            <li class="active">Customer Details</li>
+        </ol>
+    </section>
+
+
+    <header>
+        <div><a href="#/home">Back to List</a> <h3 class="ng-binding" >Details for  Amul</h3></div>
+    </header>
+
+    <section class="customer-details">
+
+        <div class="row">
+            <div class="col-xs-12 col-md-3 form-group">
+                <label class="control-label">Customer Name:</label>
+                <div class="">
+                    <p class="form-control-static cust-field-value">{{customerDetails.customername}}</p>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-md-3 form-group">
+                <label class="control-label">Customer ID:</label>
+                <div class="">
+                    <p class="form-control-static cust-field-value">{{customerDetails.id}}</p>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-md-3 form-group">
+                <label class="control-label">Product Name</label>
+                <div class="">
+                    <p class="form-control-static cust-field-value">{{customerDetails.productname}}</p>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-md-3 form-group">
+                <label class="control-label">Status</label>
+                <div class="">
+                    <p class="form-control-static cust-field-value">{{customerDetails.status}}</p>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-md-12 form-group">
+                <label class="control-label">Email Address</label>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6" ng-if="c.category==='Email'"  ng-repeat="c in customerDetails.communications">
+                        <div class="form-control-static cust-field-value" ng-if="c.category==='Email'">{{c.type}} : <a ng-href="mailto:{{c.value}}?Subject=Hello" >{{c.value}}</a></div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="col-xs-12 col-md-6 form-group">
+                <label class="control-label">Phone Number(s)</label>
+                <div class="row phone-numbers">
+                    <div class="col-xs-12 col-sm-6" ng-if="c.category==='Phone' || c.category==='Skype'"  ng-repeat="c in customerDetails.communications">
+                        <div class="form-control-static cust-field-value" ng-if="c.category==='Phone'">{{c.type}} : <a ng-href="callto://+{{c.value}}">{{c.value}}</a></div>
+                        <div class="form-control-static cust-field-value" ng-if="c.category==='Skype'">{{c.type}} : <a ng-href="skype:{{c.value}}?call">{{c.value}}</a></div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+            <div class="col-xs-12 col-md-6 form-group">
+                <label class="control-label">Address{{customerDetails.addresses.length>1?"(es)":""}}</label>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6"  ng-repeat="a in customerDetails.addresses">
+                        <address class="address-card">
+                            <strong>({{a.type}})</strong><br>
+                            {{a.street1?(a.street1+","):''}}  {{a.street2?(a.street2+","):'-'}}<br>
+                            {{a.city?(a.city+","): ''}} {{a.state?(a.state+","):''}} {{a.country?(a.country+","): '-'}}{{a.pincode?a.pincode:'.'}}<br>
+                        </address>
+                   </div>
+                </div>
+
+            </div>
+
+
+        </div>
+        <section class="usr-details-section"  >
+            <div id="exTab3" class="container">
+                <ul  class="nav nav-pills">
+                    <li class="active">
+                        <a  showtab="" ng-click="activeTab='notesTab'" href="#1b" data-toggle="tab">Notes</a>
+                    </li>
+                    <li><a  showtab="" ng-click="activeTab='visitTab'" href="#2b" data-toggle="tab">Visit</a>
+                    </li>
+                </ul>
+
+                <div class="cust-deta-tab-content tab-content clearfix">
+                    <div class="tab-pane active app-tab-item" id="1b" >
+
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Notes</label>
+                                <div class="col-sm-10">
+                                    <textarea class="form-control" rows="3" ng-model="customerDetails.newNotes">{{customerDetails.notes}}</textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Status</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control" ng-model="customerDetails.newStatus">
+                                        <option value="New">New</option>
+                                        <option value="InProgress">In Progress</option>
+                                        <option value="OrderPlaced">Order Placed</option>
+                                        <option value="Support">Support</option>
+                                        <option value="Cancelled">Cancelled</option>
+                                        <option value="Rejected">Rejected</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="tab-pane app-tab-item" id="2b">
+
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label">Date</label>
+                                <div class="col-sm-2">
+                                    <div lass="input-group input-append">
+
+                                        <input date-time=""  name="pickerMinDate" ng-model="customerDetails.visit.date"  view="date" min-view="date"  format="YYYY-MM-DD" class="form-control ng-pristine ng-scope ng-valid ng-valid-min ng-touched">
+
+                                    </div>
+                                </div>
+
+                                <label class="col-sm-1 control-label">Time</label>
+                                <div class="col-sm-2">
+                                    <div lass="input-group input-append">
+                                        <timepicker-pop input-time="customerDetails.visit.time" mandatory="false" class="input-group"
+                                                        show-meridian='true'>
+                                        </timepicker-pop>
+
+                                       </div>
+                                    </div>
+
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label">Notes</label>
+                                <div class="col-sm-11">
+                                    <textarea class="form-control" rows="3" ng-model="customerDetails.visit.notes"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label">Action</label>
+                                <div class="col-sm-11">
+                                    <select class="form-control" ng-model="customerDetails.visit.action">
+                                        <option value="Offer">Offer</option>
+                                        <option value="Lead">Lead</option>
+                                        <option value="Opportunity">Opportunity</option>
+                                        <option value="NewCustomer">New Customer</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                    <div class="app-tabs-footer">
+                        <div class="pull-right form-buttons-container">
+                            <img ng-if="dataSaveInProgress" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="/>
+                            <button type="button" class="btn btn-primary" ng-click="saveChanges(activeTab)">Save</button>
+                            <button type="button" class="btn btn-primary">Cancel</button>
+                            <div class="col-sm-2"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </section>
+
+    </section>
+
+
+</article>
+
+<script>
+
+
+</script>

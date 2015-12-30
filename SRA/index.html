@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html class="noIE" lang="en-US" ng-app="salesRepApp">
+<head>
+  <!-- meta -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>Sales Rep Application 0.0.1</title>
+
+  <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="css/adminlte.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/ngToast.min.css">
+  <link rel="stylesheet" href="css/ngToast-animations.min.css">
+  <link rel="stylesheet" href="css/angular-datepicker.css">
+ <!-- <link rel="stylesheet" href="css/ui-grid.min.css">-->
+
+</head>
+<body class="loginFormPage sra-app-body sra-app-home-css" ng-cloak>
+<toast></toast>
+
+<nav class="app-nav-bar navbar navbar-default navbar-fixed-top" ng-hide="hideMenus" ng-controller="NavigationController">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#/home" title="HOME"><i class="glyphicon glyphicon-send"></i> SalesRep</a>
+      <div></div>
+    </div> <!-- /.navbar-header -->
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active"><a href="#/dash">Dashboard</a></li>
+        <li ><a href="#/home">Customers</a></li>
+        <li><a ng-click="logout()" href="javascript:void(0);">Logout</a></li>
+        <li><a class="logged-in-user"><span class="glyphicon glyphicon-user logged-in-icon" aria-hidden="true"></span> {{ globals.authData.data.firstname +" "+globals.authData.data.lastname }}</a></li>
+      </ul> <!-- /.nav -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container -->
+</nav>
+<div class="container routes-wrapper" ng-view >
+
+</div>
+
+
+<!-- Angular Material requires Angular.js Libraries -->
+
+<script src="lib/jquery/jquery-1.11.3.js"></script>
+<script src="lib/angular/angular.js"></script>
+<script src="lib/angular/angular-route.js"></script>
+<script src="lib/angular/angular-resource.js"></script>
+<script src="lib/angular/angular-animate.min.js"></script>
+<script src="lib/angular/angular-sanitize.min.js"></script>
+<script src="lib/angular/angular-aria.min.js"></script>
+<script src="lib/angular/angular-messages.min.js"></script>
+<script src="lib/angular/angular-cookies.min.js"></script>
+<script src="lib/angular/angular-touch.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="lib/moment.min.js"></script>
+<script src="lib/moment-timezone-with-data.js"></script>
+<script src="lib/smart-table.js"></script>
+<script src="lib/ngToast.min.js"></script>
+<script src="lib/ui-bootstrap-tpls-0.11.0.min.js"></script>
+<script src="lib/angular-datepicker.min.js"></script>
+<script src="lib/timepicker.js"></script>
+<!--<script src="lib/ui-grid.min.js"></script>-->
+
+<script src="lib/crypto/md5.js"></script>
+<script src="modules/auth/services.js"></script>
+<script src="modules/auth/controllers.js"></script>
+<script src="modules/home/controllers.js"></script>
+<script src="modules/dash/controllers.js"></script>
+<!--<script src="scripts/SalesApp.js"></script>-->
+<!-- Your application bootstrap  -->
+<script src="app.js"></script>
+
+
+</body>
+</html>

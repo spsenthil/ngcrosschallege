@@ -1,0 +1,292 @@
+.login-section {
+  border: 1px solid #ECF0F5;
+  background: #FFFFFF !important;
+  margin-bottom: 0px !important;
+  padding: 5px;
+}
+
+
+
+.st-selected {
+  background: #216eff !important;
+  color: white !important;
+}
+
+/****************/
+
+#exTab1 .tab-content {
+  color : white;
+  background-color: #428bca;
+  padding : 5px 15px;
+}
+
+#exTab2 h3 {
+  color : white;
+  background-color: #428bca;
+  padding : 5px 15px;
+}
+
+/* remove border radius for the tab */
+
+#exTab1 .nav-pills > li > a {
+  border-radius: 0;
+}
+
+/* change border radius for the tab , apply corners on top*/
+#exTab3
+{
+  padding: 0px !important;
+}
+#exTab3 .nav-pills > li > a {
+  border-radius: 0px !important;
+  border: 1px solid #428bca;
+  border-bottom: none !important;
+}
+#exTab3 .tab-content {
+  color : #333;
+  /* background-color: #428bca; */
+  padding : 5px 15px;
+  border: 1px solid #428bca;
+}
+/*********************/
+.customer-details > ul > li,.customer-details > ul > li >UL >LI
+{
+  list-style: none !important;
+}
+
+ul > li{
+  list-style: none !important;
+}
+.form-group
+{
+  margin-bottom: 2px !important;
+}
+
+.sra-app-body
+{
+  background: url(images/ag-square.png);
+}
+.app-footer {
+  /*bottom: 2px;*/
+ /* position: fixed;*/
+  width: 100%;
+  padding-top: 0px !important;
+}
+
+#customerListTable tr:hover
+{
+  background: #216eff !important;
+  color: white !important;
+}
+
+.form-actions
+{
+  padding-top: 5px !important;
+}
+
+#loginFormContainer
+{
+  position: relative;
+  top: 50%;
+  transform: translateY(50%);
+}
+
+
+.loginFormPage
+{
+  background-position: 0 0,0 0,0 0;
+ /* background-color: #F8F8F8;*/
+  background-image: url("images/always-grey.png");
+  background-repeat: repeat,repeat,repeat-x;
+}
+
+.loginFormBorder {
+  background: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 7px;
+  box-shadow: 2px 2px 2px 2px #7BA9D0;
+}
+
+.routes-page-container {
+  background: url('images/cubes.png');
+}
+
+
+.login-error-icon{
+  padding-right: 5px !important;
+}
+.login-error {
+  height: 12px;
+  padding: 2px;
+  background: none;
+  border: none;
+}
+
+
+.footer-text
+{
+  color: white;
+
+}
+.phone-numbers {
+  border: 1px #E7E7E7;
+  border-style: solid;
+  box-shadow: 2px 2px #E7E7E7;
+  margin-left: 0px !Important;
+  padding: 5px;
+  width: 99%;
+}
+
+.app-tab-item{
+  height: 100% !important;
+}
+
+.customer-details
+{
+
+}
+.app-tabs-footer
+{
+
+}
+.customer-details-wrapper
+{
+
+padding-bottom: 100px;
+  background: #FFFFFF;
+  padding: 5px;
+}
+
+.form-buttons-container {
+  padding-top: 5px !important;
+}
+
+.cust-deta-tab-content{
+
+  padding: 0px !important;
+  margin: 0px !important;
+  width: 90%;
+  padding: 3px !important;
+
+}
+
+.toast-animation
+{
+
+}
+
+.toast-animation.ng-enter {
+  -webkit-animation: flipInY 1s;
+  -moz-animation: flipInY 1s;
+  animation: flipInY 1s;
+}
+
+.toast-animation.ng-leave {
+  -webkit-animation: flipOutY 1s;
+  -moz-animation: flipOutY 1s;
+  animation: flipOutY 1s;
+}
+
+.logged-in-icon {
+  color: #F6F9F6;
+  font-size: 10px;
+  border: 1px solid #286090;;
+  border-radius: 47%;
+  padding: 3px;
+  background: #286090;;
+}
+.logged-in-user
+{
+  font-size: 11px;
+}
+
+.cust-field-value
+{
+  padding: 0px !important;
+}
+
+
+.address-card {
+  box-shadow: 2px 2px 1px 1px #E7E7E7;
+  border: 1px solid #E7E7E7;
+  padding: 6px;
+}
+
+
+.app-nav-bar {
+}
+
+
+.st-sort-ascent:after{
+  padding-right: 5px !important;
+  content: '\25B2';
+  color: #337AB7;
+}
+
+.st-sort-descent:after{
+  content: '\25BC';
+  padding-right: 5px !important;
+  color: #337AB7;
+}
+
+
+/****************/
+.customer-list
+{
+  border: 1px solid #ECF0F5;
+  background: #FFFFFF !important;
+  margin-bottom: 0px;
+
+
+}
+.routes-wrapper {
+  padding-top: 60px;
+  padding-bottom: 50px;
+}
+
+.sra-app-home-css
+{
+  background: #367FA9 !important;
+}
+
+.sra-pagination
+{
+ margin:  0 !important;
+}
+.sra-pagination-td
+{
+  border: none !important;
+}
+.pagination
+{
+  margin: 0px !important;
+}
+.sra-pagination-tr
+{
+
+}
+
+.usr-details-section {
+  border: none !important;
+  background: #FFFFFF !important;
+  margin-bottom: 0px !important;
+  padding: 5px;
+}
+
+.refresh-container
+{
+  border-left: 1px solid #d2d6de;
+}
+
+.search-box
+{
+
+}
+
+.dashboard-title {
+  color: white;
+  padding-bottom: 30px
+;
+}
+
